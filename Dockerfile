@@ -40,8 +40,7 @@ RUN pecl install \
 RUN docker-php-ext-enable \
     imagick \
     xdebug
-RUN docker-php-ext-configure intl \
-	zip --with-libzip
+RUN docker-php-ext-configure intl zip --with-libzip
 RUN docker-php-ext-install \
 	intl \
     curl \
