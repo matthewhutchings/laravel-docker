@@ -57,7 +57,6 @@ RUN docker-php-ext-install \
     gd \
     zip \
     bcmath
-    && docker-php-ext-configure 
 
 # Install composer
 ENV COMPOSER_HOME /composer
