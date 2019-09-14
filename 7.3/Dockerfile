@@ -40,8 +40,10 @@ RUN pecl install \
 RUN docker-php-ext-enable \
     imagick \
     xdebug
-RUN docker-php-ext-configure zip --with-libzip
+RUN docker-php-ext-configure intl \
+	zip --with-libzip
 RUN docker-php-ext-install \
+	intl \
     curl \
     iconv \
     mbstring \
@@ -55,6 +57,7 @@ RUN docker-php-ext-install \
     gd \
     zip \
     bcmath
+    && docker-php-ext-configure 
 
 # Install composer
 ENV COMPOSER_HOME /composer
