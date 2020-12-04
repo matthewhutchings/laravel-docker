@@ -59,6 +59,9 @@ RUN docker-php-ext-install \
     zip \
     bcmath
 
+RUN set -ex && apk --no-cache add libxml2-dev
+RUN docker-php-ext-install soap
+
 # Install composer
 ENV COMPOSER_HOME /composer
 ENV PATH ./vendor/bin:/composer/vendor/bin:$PATH
