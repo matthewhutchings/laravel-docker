@@ -32,6 +32,8 @@ RUN apk add --no-cache \
     libzip-dev \
     icu-dev
 
+RUN apk add --no-cache  --repository http://dl-cdn.alpinelinux.org/alpine/edge/main --repository  http://dl-cdn.alpinelinux.org/alpine/edge/community docker
+
 # Install PECL and PEAR extensions
 RUN pecl install \
     imagick \
