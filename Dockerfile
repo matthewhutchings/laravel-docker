@@ -34,8 +34,12 @@ RUN apk add --no-cache \
 
 # Install Docker
 RUN apk add --no-cache  --repository http://dl-cdn.alpinelinux.org/alpine/edge/main --repository  http://dl-cdn.alpinelinux.org/alpine/edge/community docker
-RUN echo "export DOCKER_HOST=tcp://0.0.0.0:2375" >>  ~/.bashrc && source ~/.bashrc
-# RUN sudo service docker start
+RUN echo "export DOCKER_HOST=tcp://127.0.0.1:2375" >>  ~/.bashrc && source ~/.bashrc
+
+# Allow Sudo
+RUN apk add --no-cache su-exec
+RUN set -ex && apk --no-cache add sudo
+RUN docker
 
 # Install PECL and PEAR extensions
 RUN pecl install \
