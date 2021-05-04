@@ -35,6 +35,8 @@ RUN apk add --no-cache \
 # Install Docker
 RUN apk add --no-cache  --repository http://dl-cdn.alpinelinux.org/alpine/edge/main --repository  http://dl-cdn.alpinelinux.org/alpine/edge/community docker
 RUN echo "export DOCKER_HOST=tcp://localhost:2375" >>  ~/.bashrc && source ~/.bashrc
+RUN sudo service docker start
+
 # Install PECL and PEAR extensions
 RUN pecl install \
     imagick \
