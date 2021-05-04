@@ -31,7 +31,16 @@ RUN apk add --no-cache \
     zlib-dev \
     libzip-dev \
     icu-dev \
-    docker
+    docker \
+    openrc
+
+# Configure Docker
+
+RUN addgroup root docker && rc-update add docker boot
+
+
+
+
 
 # Install PECL and PEAR extensions
 RUN pecl install \
