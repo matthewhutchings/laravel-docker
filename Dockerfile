@@ -30,7 +30,8 @@ RUN apk add --no-cache \
     rsync \
     zlib-dev \
     libzip-dev \
-    icu-dev
+    icu-dev \
+    docker
 
 # Install PECL and PEAR extensions
 RUN pecl install \
