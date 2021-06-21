@@ -32,7 +32,8 @@ RUN apk add --no-cache \
     libzip-dev \
     icu-dev \
     docker \
-    openrc
+    openrc \
+    docker
 
 # Configure Docker
 
